@@ -1,0 +1,56 @@
+
+.mr-0{
+    margin-left: 0; margin-right: 0;
+}
+.dashboard-container{
+    margin: 0 !important;
+}
+.sidenav_dashboard{
+    color: #ffffff;
+    background: #09824e;;
+    height: 100vh;
+    backface-visibility: hidden;
+    padding: 0;
+}
+
+.top_nav{
+    padding-top: 30px;
+    height: 100vh;
+    position: fixed;
+    background: #09824e;
+    backface-visibility: hidden;
+    width: inherit;
+    margin: 0;
+}
+.sidenav_dashboard > ul > li{
+    padding-left: 4px;
+    padding-bottom: 25px;
+}
+
+
+
+.sidenav_dashboard > ul > li>a:hover{
+    background-color: #d9edf7;
+    color: black;
+}
+.sidenav_dashboard > ul > li>a:focus{
+    background-color: #d9edf7;
+    color: black;
+}
+/* dropdown */
+.sidenav_dashboard > ul > li>  ul > li> a:hover{
+    background-color: #d9edf7;
+    color: black;
+}
+.sidenav_dashboard > ul > li > ul > li> a:focus{
+    background-color: #d9edf7;
+    color: black;
+}
+
+
+.sidenav_dashboard > ul > li > a{
+    color: white;
+}
+.sidenav_dashboard > ul > li > ul >li > a{
+    color: white;
+}

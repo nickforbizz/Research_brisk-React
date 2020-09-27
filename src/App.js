@@ -1,25 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
+
+// components
+import AccNavlink from './Components/Academic/Navlinks/navlinks'
+import PostList from './Components/Academic/Posts/postlist'
+import PostMisc from './Components/Academic/Posts/post_misc'
+import AppBanner from './Components/Banner/appBanner';
+
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+      <>        
+        <div className="BoxBanner">
+          <div className="BoxBanner_inn">
+            <AppBanner />
+          </div>
+          {/* .col-12 */}
+          </div>
+          <div className="row" style={{margin: '0', width: '100vw'}}>
+          <div className="col-md-3 col-sm-3 left_content" id="myScrollspy">
+            <AccNavlink />
+          </div>
+          {/* .col-md-3 */}
+
+          <div className="col-md-6 col-sm-9">
+            <h4>Posts</h4> <hr/>
+            <PostList />
+          </div>
+          {/* .col-md-6 */}
+
+          <div className="col-md-3 hidden-sm  right_content">
+            <PostMisc />
+          </div>
+          {/* .col-md-3 */}
+        </div>
+        {/* .row */}
+      </>
   );
 }
 
