@@ -97,7 +97,6 @@ export default function Place_order(props) {
 
     // find wordcount per page
     const calcWordcount = (event) => {
-        toast.error('Order did not add')
         let val = event.target.value * 275
         setPages(event.target.value)
         setWordcount(val)
@@ -320,7 +319,7 @@ export default function Place_order(props) {
                                 </div>
                             </div>
                         </form>
-                        {/* <!-- .form --> */}
+                        {/* <!-- .form --> */} 
                     </div>
                 </div>
             </div>

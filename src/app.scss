@@ -1,0 +1,19 @@
+/* footer */
+.footer{
+    height: 200px;
+    background: #02be6e;
+    text-align: center;
+    padding-top: 3rem;
+    color: white;
+
+    & aside{
+      text-align: left;
+      padding-left: 4rem;
+
+      & strong{
+        text-align: left;
+        padding-left: 4rem;
+      }
+    }
+  }
+  

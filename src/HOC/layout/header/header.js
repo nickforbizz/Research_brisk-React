@@ -32,15 +32,15 @@ export default function Header(props) {
     // setUser(AuthService.getCurrentUser());
     let loguser = (!user) ?
       <Link to="/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link> :
-      <a className="dropdown">
-        <strong className="dropdown-toggle" data-toggle="dropdown">Others 
+      <b className="dropdown">
+        <strong className="dropdown-toggle" data-toggle="dropdown">Others
         <span className="caret"></span></strong>
         <ul className="dropdown-menu">
           <li><Link to="/dashboard">Dashboard</Link></li>
           <li><Link to="#" onClick={() => AuthService.logout()}><span className="glyphicon glyphicon-log-out"></span> Logout</Link></li>
         </ul>
-        
-      </a>
+
+      </b>
       ;
     return loguser;
   }
@@ -80,11 +80,11 @@ export default function Header(props) {
 
             <ul className="nav navbar-nav navbar-right">
               <li className=""><Link to="/">Home</Link></li>
-              <li><a href="#">Academic</a></li>
-              <li><a href="#">Jobs</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-              <li>{renderLogUser()}</li>
+              <li><Link to="/academic_bio">Academic</Link></li>
+              <li><Link to="/jobs">Jobs</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+              <li className="dropdown_others">{renderLogUser()}</li>
             </ul>
           </div>
         </div>

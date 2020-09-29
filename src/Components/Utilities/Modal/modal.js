@@ -35,7 +35,7 @@ export default function Modal(props) {
                     {/* Modal */}
 
                     <div id="placeorderModal" className={ show ? 'modal display-block show' : 'modal display-none fade '} role="dialog">
-                        <div className="modal-dialog">
+                        <div className="modal-dialog modal-lg">
                             {/* Modal content */}
                             <div className="modal-content">
                                 <div className="modal-header">

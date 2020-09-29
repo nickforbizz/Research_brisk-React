@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
+import './app.scss';
 import 'react-toastify/dist/ReactToastify.css';
+
 
 // components
 import AccNavlink from './Components/Academic/Navlinks/navlinks'

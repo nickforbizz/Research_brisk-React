@@ -3,6 +3,7 @@ import axios from "axios";
 
 import AuthService from '../../../HOC/helpers/authservice';
 import { authHeader } from '../../../HOC/helpers/authheader';
+import { Link } from 'react-router-dom';
 
 export default function Post_misc() {
 
@@ -47,7 +48,11 @@ export default function Post_misc() {
             );
         } else {
             return recent_blogs.map((item, i) => (
-                <li className="list-group-item list-group-item-padd mr-0" key={i}>{item.title} <span className="badge">view</span></li>
+                <li className="list-group-item list-group-item-padd mr-0" key={i}>{item.title} 
+                    <span className="badge pb-1">
+                        <Link  to={`/post_view/${item.id}`}>view</Link>
+                    </span>
+                </li>
             ))
         }
     }

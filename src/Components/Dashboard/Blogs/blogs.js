@@ -22,6 +22,7 @@ export default function Blogs(props) {
     const [blog_content, setBlog_content] = useState('');
     const [show_modal, setShow_modal] = useState(false);
     const [title, setTitle] = useState('');
+    const [category_id, setCategory_id] = useState('');
     const [descr, setDescr] = useState('');
     const [add_flag, setAdd_flag] = useState('A');
     const [blog_id, setBlog_id] = useState('');
@@ -63,6 +64,7 @@ export default function Blogs(props) {
         setBlog_id(id);
         axios.get(AuthService.API_URL + 'get_blog/' + id).then(res => {
             console.log(res.data);
+            setCategory_id(res.data.blog_category_id)
             setTitle(res.data.title)
             setDescr(res.data.description)
             setBlog_content(res.data.body)
@@ -244,7 +246,8 @@ export default function Blogs(props) {
                                                 id="category"
                                                 name="blog_category_id"
                                                 ref={register({ required: true })}
-
+                                                value={category_id}
+                                                onChange={(e) => setCategory_id(e.target.value)}
                                             >
                                                 <option defaultValue> -- select -- </option>
                                                 {renderCats()}
@@ -296,6 +299,7 @@ export default function Blogs(props) {
                                                 className="form-control"
                                                 id="featured_image"
                                                 name="featured_image"
+                                                ref={register({ required: true })}
                                             />
                                             <p className="text_red">{errors.featured_image && " Image is required"}</p>
 

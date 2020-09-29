@@ -75,7 +75,7 @@ export default function Post_view(props) {
 
     if(post.length < 1){
         return (
-        <div className="jumbotron">
+        <div className="jumbotron text-center pt-5">
             <ToastContainer />
             <h5>Loading ...</h5>
         </div>
@@ -106,7 +106,7 @@ export default function Post_view(props) {
                                 <p>Posted By: <i>{post.user.names}</i></p>
                             </div>
                         </div>
-                        <h2>{post.title}</h2>
+                        <h2 className="text-center">{post.title}</h2> <hr/>
 
                         <article>
                             { ReactHtmlParser(post.body)}

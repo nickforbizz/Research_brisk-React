@@ -16,6 +16,7 @@ import { authHeader } from '../../HOC/helpers/authheader';
 
 // components
 import AppPlaceOrder from '../Academic/Orders/placeOrder';
+import { Link } from 'react-router-dom';
 
 
 // install Swiper components
@@ -103,13 +104,14 @@ export default function AppBanner() {
     } else {
       return recent_blogs.map((item, i) => (
         <SwiperSlide key={i}>
-          <h6 className="text-center ">{item.title}</h6>
-          <img
-            src={`${AuthService.IMG_URL}storage/${item.media_link.replace('public/', '')}`}
-            height="100%"
-            width="100%"
-            alt={`${item.title}`}
-          />
+          <Link  to={`/post_view/${item.id}`}>
+            <img
+              src={`${AuthService.IMG_URL}storage/${item.media_link.replace('public/', '')}`}
+              height= '200px'
+              width="100%"
+              alt={`${item.title}`}
+            />
+          </Link>
         </SwiperSlide>
 
       ))
@@ -118,7 +120,7 @@ export default function AppBanner() {
 
   if (recent_blogs.length < 1) {
     return (
-      <div className="">
+      <div className="text-center">
         <h4>Loading ..</h4>
       </div>)
   } else {
@@ -128,7 +130,7 @@ export default function AppBanner() {
         <div className="jumbotron boxHeader">
           <div className="container">
             <div className="row">
-              <div className="col-md-8">
+              <div className="col-sm-8">
                 <h3>Blogger and Academic Writer</h3>
                 <p>
                   React Mobile navbar is a horizontal navigation component which
@@ -140,7 +142,7 @@ export default function AppBanner() {
                 </button>
               </div>
 
-              <div className="col-md-4">
+              <div className="col-sm-4">
                 <div className="pt-2">
 
 
