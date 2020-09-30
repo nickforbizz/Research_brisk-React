@@ -15,7 +15,6 @@
 
 .top_nav{
     padding-top: 30px;
-    height: 100vh;
     position: fixed;
     background: #09824e;
     backface-visibility: hidden;

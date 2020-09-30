@@ -25,6 +25,7 @@ export default function PlaceOrder(props) {
     const [email, setEmail] = useState('');
     const [title, setTitle] = useState('');
     const [pages, setPages] = useState('');
+    const [duedate, setDuedate] = useState('');
     const [wordcount, setWordcount] = useState('');
     const [description, setDescription] = useState('');
 
@@ -43,6 +44,7 @@ export default function PlaceOrder(props) {
             setOrder_cats(res.data.cats);
             setOrder_formats(res.data.formats);
             setOrder_langs(res.data.langs);
+            setDuedate(res.data.duedate);
         });
         let user = AuthService.getCurrentUser();
         setEmail(user.email);
@@ -108,6 +110,7 @@ export default function PlaceOrder(props) {
         axios.post(url, data2, {
             headers: headers
         }).then(res => {
+            swal.close();
             console.log(res.data);
             if(+res.data.code === 1){
                 toast.success(res.data.msg)
@@ -204,7 +207,7 @@ export default function PlaceOrder(props) {
                                                 </div>
                                                 {/* col-md-6 */}
 
-                                                <div className="col-md-6">
+                                                <div className="col-md-4">
                                                     <div className="form-group">
                                                         <label htmlFor="pages">Pages:</label>
                                                         <input
@@ -224,7 +227,7 @@ export default function PlaceOrder(props) {
                                                 {/* col-md-3 */}
 
 
-                                                <div className="col-md-6">
+                                                <div className="col-md-4">
                                                     <div className="form-group">
                                                         <label htmlFor="wordcount">Word Count:</label>
                                                         <input
@@ -242,6 +245,26 @@ export default function PlaceOrder(props) {
                                                     </div>
                                                 </div>
                                                 {/* col-md-3 */}
+
+                                                <div className="col-md-4">
+                                                    <div className="form-group">
+                                                        <label htmlFor="duedate">Due Date:</label>
+                                                        <input
+                                                            className="form-control"
+                                                            type="date"
+                                                            id="duedate"
+                                                            name="duedate"
+                                                            value={duedate}
+                                                            placeholder="duedate"
+                                                            ref={register({ required: true })}
+                                                            onChange={(e) => setDuedate(e.target.value)}
+                                                        />
+                                                        <p className="text_red">{errors.duedate && "Due date is required"}</p>
+
+                                                    </div>
+                                                </div>
+                                                {/* col-md-3 */}
+
 
                                                 <div className="col-md-4">
                                                     <div className="form-group">
